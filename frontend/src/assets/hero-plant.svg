@@ -1,0 +1,63 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="144" y1="93" x2="1052" y2="813" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D3B2E"/>
+      <stop offset="0.5" stop-color="#134B37"/>
+      <stop offset="1" stop-color="#2C6B4D"/>
+    </linearGradient>
+    <linearGradient id="leafA" x1="414" y1="274" x2="658" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A7F3D0"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="leafB" x1="625" y1="220" x2="845" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BBF7D0"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+    <linearGradient id="leafC" x1="340" y1="362" x2="590" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#86EFAC"/>
+      <stop offset="1" stop-color="#15803D"/>
+    </linearGradient>
+    <linearGradient id="pot" x1="408" y1="650" x2="807" y2="856" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C2D12"/>
+      <stop offset="0.52" stop-color="#9A3412"/>
+      <stop offset="1" stop-color="#4E1D09"/>
+    </linearGradient>
+    <linearGradient id="soil" x1="452" y1="620" x2="751" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6B3F26"/>
+      <stop offset="1" stop-color="#3F1E0E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(598 420) rotate(90) scale(430 420)">
+      <stop stop-color="#86EFAC" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#0B241A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="24" y="24" width="1152" height="852" rx="42" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="852" rx="42" stroke="#9AE6B4" stroke-opacity="0.18"/>
+  <circle cx="598" cy="420" r="330" fill="url(#glow)"/>
+
+  <ellipse cx="598" cy="690" rx="166" ry="40" fill="#081A12" fill-opacity="0.5"/>
+
+  <path d="M469 681C469 653.4 526.8 631 598 631C669.2 631 727 653.4 727 681V743C727 770.6 669.2 793 598 793C526.8 793 469 770.6 469 743V681Z" fill="url(#pot)"/>
+  <path d="M492 678C492 661.8 543 649 598 649C653 649 704 661.8 704 678V735C704 751.2 653 764 598 764C543 764 492 751.2 492 735V678Z" fill="url(#soil)"/>
+  <path d="M498 661L701 661" stroke="#FECACA" stroke-opacity="0.16" stroke-width="8" stroke-linecap="round"/>
+  <path d="M506 712L690 712" stroke="#FECACA" stroke-opacity="0.16" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M588 642C582 567 564 484 532 402C512 352 497 309 486 260" stroke="#D1FAE5" stroke-opacity="0.6" stroke-width="14" stroke-linecap="round"/>
+  <path d="M609 642C615 560 633 486 665 397C685 340 709 299 731 248" stroke="#D1FAE5" stroke-opacity="0.5" stroke-width="14" stroke-linecap="round"/>
+
+  <path d="M512 454C455 449 397 419 352 364C420 345 483 347 537 368C559 377 575 391 588 408C569 435 546 449 512 454Z" fill="url(#leafC)"/>
+  <path d="M520 441C469 437 419 414 384 373C441 357 491 360 534 378C550 385 562 394 572 404C558 425 541 438 520 441Z" fill="#D1FAE5" fill-opacity="0.22"/>
+
+  <path d="M563 356C529 287 507 225 500 158C570 170 623 201 660 245C680 269 691 294 693 321C653 352 613 364 563 356Z" fill="url(#leafA)"/>
+  <path d="M577 347C548 294 532 243 527 196C576 206 613 227 641 258C655 274 663 290 666 309C634 332 603 343 577 347Z" fill="#FFFFFF" fill-opacity="0.2"/>
+
+  <path d="M671 371C709 296 765 244 834 212C847 286 837 348 805 406C792 430 775 447 755 460C711 447 682 418 671 371Z" fill="url(#leafB)"/>
+  <path d="M683 364C713 307 757 263 813 237C820 292 810 338 786 381C777 398 766 412 752 423C718 413 694 393 683 364Z" fill="#FFFFFF" fill-opacity="0.18"/>
+
+  <path d="M610 399C598 333 608 268 637 201C688 244 719 292 727 346C732 382 724 411 705 437C670 431 638 421 610 399Z" fill="#86EFAC" fill-opacity="0.18"/>
+  <path d="M592 420C582 372 558 329 521 293C494 342 485 389 493 432C499 461 515 486 538 506C569 482 589 454 592 420Z" fill="#A7F3D0" fill-opacity="0.14"/>
+
+  <path d="M551 611C513 598 476 568 446 522C501 512 552 515 594 531C614 538 630 548 644 561C626 591 595 608 551 611Z" fill="#16A34A" fill-opacity="0.34"/>
+  <path d="M642 606C676 592 709 564 739 521C690 514 643 517 601 532C582 539 566 548 552 561C568 590 596 606 642 606Z" fill="#22C55E" fill-opacity="0.28"/>
+</svg>
