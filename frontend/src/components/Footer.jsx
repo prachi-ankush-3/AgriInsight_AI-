@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="mt-12 border-t border-emerald-100/20 bg-emerald-950/45">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-8 md:grid-cols-3 md:px-8">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-3 md:px-8">
         <div>
           <h3 className="font-heading text-lg font-bold text-emerald-100">AgriInsight AI</h3>
           <p className="mt-2 text-sm text-emerald-50/70">
@@ -24,7 +24,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <p className="border-t border-emerald-100/10 px-5 py-4 text-center text-xs text-emerald-50/60 md:px-8">
+      <p className="border-t border-emerald-100/10 px-4 py-4 text-center text-xs text-emerald-50/60 sm:px-5 md:px-8">
         Copyright {new Date().getFullYear()} AgriInsight AI. All rights reserved.
       </p>
     </footer>

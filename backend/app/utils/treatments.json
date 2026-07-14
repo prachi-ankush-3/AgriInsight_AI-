@@ -1,0 +1,44 @@
+{
+  "Healthy": {
+    "medicine": "No chemical treatment required",
+    "organic": "Continue regular monitoring",
+    "severity": "Low",
+    "recommendation": "Plant appears healthy. Maintain current care practices and monitor regularly."
+  },
+  "Leaf Spot": {
+    "medicine": "Copper Fungicide",
+    "organic": "Neem Oil",
+    "severity": "Medium",
+    "recommendation": "Apply a copper-based fungicide and improve air circulation around the crop canopy."
+  },
+  "Powdery Mildew": {
+    "medicine": "Sulfur Fungicide",
+    "organic": "Milk spray or neem oil",
+    "severity": "Medium",
+    "recommendation": "Remove heavily infected leaves and treat early in the morning before heat rises."
+  },
+  "Blight": {
+    "medicine": "Mancozeb",
+    "organic": "Bacillus subtilis spray",
+    "severity": "High",
+    "recommendation": "Isolate affected plants, remove infected tissue, and treat with a protective fungicide."
+  },
+  "Rust": {
+    "medicine": "Triazole Fungicide",
+    "organic": "Neem oil and pruning",
+    "severity": "Medium",
+    "recommendation": "Avoid overhead watering and treat the leaf surface thoroughly."
+  },
+  "Anthracnose": {
+    "medicine": "Chlorothalonil",
+    "organic": "Copper spray",
+    "severity": "High",
+    "recommendation": "Remove diseased fruit and reduce humidity around the plant."
+  },
+  "Fruit Rot": {
+    "medicine": "Fungicidal drench",
+    "organic": "Compost tea and sanitation",
+    "severity": "High",
+    "recommendation": "Remove infected fruit immediately and improve drainage."
+  }
+}

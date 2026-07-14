@@ -4,9 +4,9 @@ import Navbar from '../components/Navbar'
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen text-emerald-50">
+    <div className="min-h-screen overflow-x-hidden text-emerald-50">
       <Navbar />
-      <main className="mx-auto w-full max-w-6xl px-5 pt-8 pb-4 md:px-8 md:pt-10">
+      <main className="mx-auto w-full max-w-6xl px-4 pt-6 pb-4 sm:px-5 md:px-8 md:pt-10">
         <Outlet />
       </main>
       <Footer />

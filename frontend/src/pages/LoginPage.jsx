@@ -11,15 +11,15 @@ export default function LoginPage() {
   const [formData, setFormData] = useState(initialForm)
   const [error, setError] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const { user, login } = useAuth()
+  const { user, login, isAuthReady } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
 
   useEffect(() => {
-    if (user) {
+    if (isAuthReady && user) {
       navigate('/', { replace: true })
     }
-  }, [navigate, user])
+  }, [isAuthReady, navigate, user])
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -43,9 +43,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-5 py-10 text-emerald-50">
-      <div className="grid w-full max-w-5xl gap-8 overflow-hidden rounded-[2rem] border border-emerald-100/15 bg-emerald-950/50 shadow-2xl shadow-black/25 backdrop-blur-xl lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-lime-700 p-8 md:p-12">
+    <div className="flex min-h-screen items-center justify-center px-4 py-6 text-emerald-50 sm:px-5 sm:py-8">
+      <div className="grid w-full max-w-5xl gap-0 overflow-hidden rounded-[1.5rem] border border-emerald-100/15 bg-emerald-950/50 shadow-2xl shadow-black/25 backdrop-blur-xl lg:grid-cols-[1.05fr_0.95fr] lg:rounded-[2rem]">
+        <div className="relative overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-lime-700 p-6 sm:p-8 md:p-12">
           <div className="absolute -left-10 top-6 h-40 w-40 rounded-full bg-lime-300/20 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-emerald-300/20 blur-3xl" />
           <div className="relative space-y-6">
@@ -53,28 +53,18 @@ export default function LoginPage() {
               Secure Access
             </span>
             <div className="space-y-4">
-              <h1 className="font-heading text-4xl font-bold leading-tight text-white md:text-5xl">
+              <h1 className="font-heading text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                 Sign in to inspect crops and manage analysis history.
               </h1>
               <p className="max-w-xl text-sm leading-6 text-emerald-50/80 md:text-base">
-                The dashboard is locked until a user authenticates. Use the demo credentials on the
-                right to enter the application.
+                The dashboard is locked until a user authenticates. Sign in with your registered
+                account to continue.
               </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-black/15 p-5 backdrop-blur-sm">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-emerald-100/80">
-                Demo credentials
-              </p>
-              <div className="mt-3 space-y-2 text-sm text-white/90">
-                <p>Email: admin@agriinsight.ai</p>
-                <p>Password: Agri1234!</p>
-              </div>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center p-8 md:p-12">
+        <div className="flex items-center p-6 sm:p-8 md:p-12">
           <form onSubmit={handleSubmit} className="w-full space-y-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-100/70">

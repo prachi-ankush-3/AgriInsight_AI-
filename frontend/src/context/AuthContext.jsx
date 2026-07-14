@@ -1,46 +1,99 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { apiRequest } from '../api/client'
 
-const AUTH_STORAGE_KEY = 'agriinsight_auth_user'
-const DEMO_CREDENTIALS = {
-  email: 'admin@agriinsight.ai',
-  password: 'Agri1234!',
-}
+const AUTH_STORAGE_KEY = 'agriinsight_auth_session'
 
 const AuthContext = createContext(null)
 
-function readStoredUser() {
+function readStoredSession() {
   try {
-    const storedUser = localStorage.getItem(AUTH_STORAGE_KEY)
-    return storedUser ? JSON.parse(storedUser) : null
+    const storedSession = localStorage.getItem(AUTH_STORAGE_KEY)
+    return storedSession ? JSON.parse(storedSession) : null
   } catch {
     return null
   }
 }
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => readStoredUser())
+  const [session, setSession] = useState(() => readStoredSession())
+  const [isAuthReady, setIsAuthReady] = useState(false)
 
-  const login = async ({ email, password }) => {
-    const normalizedEmail = email.trim().toLowerCase()
+  useEffect(() => {
+    let isMounted = true
 
-    if (
-      normalizedEmail !== DEMO_CREDENTIALS.email ||
-      password !== DEMO_CREDENTIALS.password
-    ) {
-      throw new Error('Invalid email or password.')
+    const restoreSession = async () => {
+      const stored = readStoredSession()
+      if (!stored?.token) {
+        if (isMounted) {
+          setSession(null)
+          setIsAuthReady(true)
+        }
+        return
+      }
+
+      try {
+        const response = await apiRequest('/auth/me', { token: stored.token })
+        if (isMounted) {
+          const nextSession = { token: stored.token, user: response.data }
+          setSession(nextSession)
+          localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(nextSession))
+        }
+      } catch {
+        if (isMounted) {
+          setSession(null)
+          localStorage.removeItem(AUTH_STORAGE_KEY)
+        }
+      } finally {
+        if (isMounted) {
+          setIsAuthReady(true)
+        }
+      }
     }
 
-    const nextUser = { email: normalizedEmail }
-    setUser(nextUser)
-    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(nextUser))
+    restoreSession()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  const login = async ({ email, password }) => {
+    const response = await apiRequest('/auth/login', {
+      method: 'POST',
+      body: {
+        email: email.trim().toLowerCase(),
+        password,
+      },
+    })
+
+    const token = response?.data?.token?.access_token
+    const user = response?.data?.user
+    if (!token || !user) {
+      throw new Error('Login response is invalid.')
+    }
+
+    const nextSession = { token, user }
+    setSession(nextSession)
+    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(nextSession))
   }
 
   const logout = () => {
-    setUser(null)
+    setSession(null)
     localStorage.removeItem(AUTH_STORAGE_KEY)
   }
 
-  return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>
+  const value = useMemo(
+    () => ({
+      user: session?.user ?? null,
+      token: session?.token ?? null,
+      isAuthReady,
+      login,
+      logout,
+    }),
+    [session, isAuthReady],
+  )
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 export function useAuth() {

@@ -13,7 +13,7 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const { logout, user } = useAuth()
+  const { logout } = useAuth()
   const navigate = useNavigate()
 
   const getLinkClass = ({ isActive }) =>
@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-emerald-100/20 bg-emerald-950/55 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-5 md:px-8 md:py-4">
         <Link to="/" className="shrink-0">
           <AppLogo />
         </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
       </nav>
 
       {isOpen && (
-        <div className="mx-5 mb-4 rounded-2xl border border-emerald-50/20 bg-emerald-900/70 p-3 md:hidden">
+        <div className="mx-4 mb-4 rounded-2xl border border-emerald-50/20 bg-emerald-900/85 p-3 shadow-xl shadow-black/20 md:hidden sm:mx-5">
           <div className="flex flex-col gap-2">
             {links.map((item) => (
               <NavLink
