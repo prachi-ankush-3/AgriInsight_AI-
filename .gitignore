@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 backend/models/*.keras
 *.keras
 backend/venv/
 __pycache__/
 node_modules/
+=======
+backend/.venv/
+.venv/
+*.pyc
+__pycache__/
+>>>>>>> 753944124747878d9fd029a60d05a38857a8b969

@@ -1,16 +1,33 @@
-# React + Vite
+# 🌿 AgriInsight AI - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Overview
+The frontend of AgriInsight AI is built using React and Vite. It provides a responsive interface for uploading plant leaf images, viewing disease predictions, treatment recommendations, and scan history.
 
-Currently, two official plugins are available:
+## Technologies Used
+- React
+- Vite
+- Tailwind CSS
+- React Router DOM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- User Login
+- Upload Leaf Image
+- AI Disease Prediction
+- Treatment Recommendation
+- Weather Suggestion
+- Prediction History
+- Responsive UI
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+The application runs at:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+http://localhost:5173
+```
