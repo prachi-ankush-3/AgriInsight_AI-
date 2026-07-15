@@ -305,7 +305,7 @@ https://colab.research.google.com/drive/1M60m6lwKBTm5QwZVlnmYic2h7s93NNbc?usp=sh
 # 🧠 Trained Model
 
 **Google Drive (Trained Model):**  
-https://drive.google.com/file/d/YOUR_MODEL_FILE_ID/view?usp=sharing
+https://drive.google.com/file/d/1jw8Bop9qguB35rc1D9UQ56WeObj3WiM5/view?usp=sharing
 
 
 ---
