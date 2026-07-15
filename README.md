@@ -112,14 +112,36 @@ AgriInsight_AI/
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/AgriInsight_AI.git
+git clone https://github.com/prachi-ankush-3/AgriInsight_AI-.git
 
 cd AgriInsight_AI
 ```
 
 ---
 
-## 2️⃣ Backend Setup
+## 2️⃣ Model Setup
+
+Create a **models** folder inside the **backend** directory and place the downloaded trained model file inside it.
+
+Project structure:
+
+```text
+AgriInsight_AI/
+│
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── models/
+│   │   └── plant_disease_recog_model_pwp.keras
+│   └── ...
+└── frontend/
+```
+
+> 📥 Download the trained model from the Google Drive link provided above and place it inside the `backend/models/` folder.
+
+---
+
+## 3️⃣ Backend Setup
 
 ```bash
 cd backend
@@ -131,7 +153,7 @@ python app.py
 
 Backend runs at:
 
-```
+```text
 http://localhost:5000
 ```
 
@@ -186,6 +208,10 @@ http://localhost:5173
 <p align="center">
   <img src="./Outputs/History.png" alt="Prediction History" width="900"/>
 </p>
+
+
+=======
+
 
 ---
 
@@ -265,11 +291,14 @@ You can also train the model using the PlantVillage dataset available on Kaggle.
 
 # 📓 Model Training Notebook
 
-Google Colab Notebook:
+**Google Colab Notebook:**  
+https://colab.research.google.com/drive/1M60m6lwKBTm5QwZVlnmYic2h7s93NNbc?usp=sharing
 
-https://colab.research.google.com/
+# 🧠 Trained Model
 
-*(Replace this with your own Colab notebook link.)*
+**Google Drive (Trained Model):**  
+https://drive.google.com/file/d/1jw8Bop9qguB35rc1D9UQ56WeObj3WiM5/view?usp=sharing
+
 
 ---
 
@@ -318,16 +347,7 @@ Response:
 
 ---
 
-# 👨‍💻 Team Members
 
-| Name | Role |
-|------|------|
-| Member 1 | Frontend Development |
-| Member 2 | Backend Development |
-| Member 3 | AI Model Development |
-| Member 4 | Testing & Documentation |
-
----
 
 # 📜 Requirements
 
@@ -346,7 +366,6 @@ Frontend dependencies:
 ```
 React
 Vite
-Axios
 ```
 
 ---
@@ -373,11 +392,8 @@ If you found this project helpful,
 
 📢 Share it with others
 
----
 
-# 📄 License
 
-This project is licensed under the MIT License.
 
 ---
 
