@@ -8,7 +8,6 @@
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-AI-FF6F00?style=for-the-badge&logo=tensorflow)
 ![Vite](https://img.shields.io/badge/Vite-Frontend-646CFF?style=for-the-badge&logo=vite)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </p>
 
